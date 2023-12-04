@@ -1,3 +1,4 @@
+// "fs" è il modulo per la gestione del FileSystem
 const fs = require("fs");
 
 // reading files
