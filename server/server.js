@@ -2,10 +2,18 @@
 const http = require("http");
 // "fs" è il modulo per la gestione del FileSystem
 const fs = require("fs");
+//Lodash
+const _ = require("lodash");
 
 //Creazione del server locale
 const server = http.createServer((req, res) => {
-  console.log(req.url, req.method);
+  // lodash
+  const num = _.random(0, 20);
+  console.log(num);
+  const greet = _.once(() => console.log("Hello"));
+
+  greet();
+  greet();
 
   // set header
   res.setHeader("Content-Type", "text/html");
@@ -13,7 +21,7 @@ const server = http.createServer((req, res) => {
   //res.write("<h1>Hello World!</h1>");
 
   //Piccola routine per la gestione del routing
-  let path = "server/views/";
+  let path = "views/";
 
   switch (req.url) {
     case "/":
